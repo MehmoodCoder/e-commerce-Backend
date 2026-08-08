@@ -141,3 +141,10 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Environment variables (Sensitive secrets)
+.env
+.env.local
+.env.development
+.env.production
+config/config.env
