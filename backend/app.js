@@ -1,7 +1,7 @@
-import express from 'express'
+import express from "express";
 
-const app = express()
+const app = express();
 
-import Product from './routes/product.js'
+import Product from "./routes/product.js";
 
-export default app
+export default app;
