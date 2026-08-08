@@ -1,0 +1,22 @@
+{
+  "name": "e-commerce-backend",
+  "version": "1.0.0",
+  "description": "A backend for e-commerce website ",
+  "keywords": [
+    "e-commerce"
+  ],
+  "homepage": "https://github.com/MehmoodCoder/e-commerce-Backend#readme",
+  "bugs": {
+    "url": "https://github.com/MehmoodCoder/e-commerce-Backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MehmoodCoder/e-commerce-Backend.git"
+  },
+  "author": "MehmoodCoder",
+  "type": "module",
+  "main": "backend/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
