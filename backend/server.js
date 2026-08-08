@@ -5,7 +5,7 @@ import dotenv from 'dotenv'
 
 dotenv.config({ path: './config/config.env' });
 
-const PORT = process.dotenv.PORT
+const PORT = process.dotenv.PORT || 5000;
 
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
