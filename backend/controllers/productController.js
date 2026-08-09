@@ -1,6 +1,6 @@
 import ProductSchema from "../models/productModel.js";
 
-// Only for Admin 
+// Only for Admin
 export const createProduct = async (req, res) => {
   try {
     const product = await ProductSchema.create(req.body);
@@ -19,7 +19,7 @@ export const createProduct = async (req, res) => {
 
 export const getAllProducts = async (req, res) => {
   try {
-    const products = await ProductSchema.find({})
+    const products = await ProductSchema.find({});
 
     res.status(200).json({
       success: true,
@@ -31,4 +31,4 @@ export const getAllProducts = async (req, res) => {
       message: error.message,
     });
   }
-}
+};
