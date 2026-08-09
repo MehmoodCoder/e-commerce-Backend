@@ -21,7 +21,7 @@ export const getAllProducts = async (req, res) => {
   try {
     const products = await ProductSchema.find({})
 
-    res.status(201).json({
+    res.status(200).json({
       success: true,
       data: products,
     });
