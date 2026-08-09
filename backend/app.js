@@ -2,7 +2,7 @@ import express from "express";
 
 const app = express();
 
-import Product from "./routes/product.js";
+import Product from "./routes/productRoute.js";
 
 app.use(express.json())
 
