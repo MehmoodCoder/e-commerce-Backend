@@ -21,13 +21,6 @@ export const getAllProducts = async (req, res, next) => {
   try {
     const products = await ProductSchema.find({});
 
-    if (!products) {
-        return res.status(404).json({
-          success: false,
-          message: "Product Not Found",
-        });
-      }
-
     res.status(200).json({
       success: true,
       data: products,
@@ -42,27 +35,23 @@ export const getAllProducts = async (req, res, next) => {
 
 export const ProductDetails = async (req, res) => {
   try {
-      const product = await ProductSchema.findById(req.params.id);
+    const product = await ProductSchema.findById(req.params.id);
 
-      if (!product) {
-        return res.status(404).json({
-          success: false,
-          message: "Product Not Found",
-        });
-      }
-
-      res.status(200).json({
-        success: true,
-        data: product
-      });
-    } catch (error) {
-      res.status(400).json({
-        success: false,
-        message: error.message,
-      });
+    if (!product) {
+      return next(new ErrorHandler("Product Not Found", 404));
     }
-}
 
+    res.status(200).json({
+      success: true,
+      data: product,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
 
 // Admin
 import Product from "../models/productModel.js";
@@ -72,10 +61,7 @@ export const UpdateProduct = async (req, res, next) => {
     let product = await Product.findById(req.params.id);
 
     if (!product) {
-      return res.status(404).json({
-        success: false,
-        message: "Product Not Found",
-      });
+      return next(new ErrorHandler("Product Not Found", 404));
     }
 
     product = await Product.findByIdAndUpdate(req.params.id, req.body, {
@@ -96,24 +82,21 @@ export const UpdateProduct = async (req, res, next) => {
 };
 
 export const DeleteProduct = async (req, res, next) => {
-    try {
-      const product = await ProductSchema.findByIdAndDelete(req.params.id);
+  try {
+    const product = await ProductSchema.findByIdAndDelete(req.params.id);
 
-      if (!product) {
-        return res.status(404).json({
-          success: false,
-          message: "Product Not Found",
-        });
-      }
-
-      res.status(200).json({
-        success: true,
-        message: "Product Deleted Successfully",
-      });
-    } catch (error) {
-      res.status(400).json({
-        success: false,
-        message: error.message,
-      });
+    if (!product) {
+      return next(new ErrorHandler("Product Not Found", 404));
     }
-  };
+
+    res.status(200).json({
+      success: true,
+      message: "Product Deleted Successfully",
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
