@@ -11,9 +11,6 @@ const PORT = process.env.PORT || 5000;
 ConnectDB(process.env.MONGO_URL)
   .then(() => {
     console.log("Database Connected Successfully");
-  })
-  .catch((error) => {
-    console.error("Database connection failure:", error);
   });
 
 const server = app.listen(PORT, () => {
