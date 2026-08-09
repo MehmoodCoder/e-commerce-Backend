@@ -1,7 +1,7 @@
 import ProductSchema from "../models/productModel.js";
 
 // Only for Admin
-export const createProduct = async (req, res) => {
+export const createProduct = async (req, res, next) => {
   try {
     const product = await ProductSchema.create(req.body);
 
@@ -17,7 +17,7 @@ export const createProduct = async (req, res) => {
   }
 };
 
-export const getAllProducts = async (req, res) => {
+export const getAllProducts = async (req, res, next) => {
   try {
     const products = await ProductSchema.find({});
 
@@ -36,7 +36,7 @@ export const getAllProducts = async (req, res) => {
 // Admin
 import Product from "../models/productModel.js";
 
-export const UpdateProduct = async (req, res) => {
+export const UpdateProduct = async (req, res, next) => {
   try {
     let product = await Product.findById(req.params.id);
 
@@ -64,7 +64,7 @@ export const UpdateProduct = async (req, res) => {
   }
 };
 
-export const DeleteProduct = async (req, res) => {
+export const DeleteProduct = async (req, res, next) => {
     try {
       const product = await ProductSchema.findByIdAndDelete(req.params.id);
 
