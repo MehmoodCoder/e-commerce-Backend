@@ -32,3 +32,34 @@ export const getAllProducts = async (req, res) => {
     });
   }
 };
+
+// Admin
+import Product from "../models/productModel.js";
+
+export const UpdateProduct = async (req, res) => {
+  try {
+    let product = await Product.findById(req.params.id);
+
+    if (!product) {
+      return res.status(404).json({
+        success: false,
+        message: "Product Not Found",
+      });
+    }
+
+    product = await Product.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
+    res.status(200).json({
+      success: true,
+      updatedProduct: product,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
