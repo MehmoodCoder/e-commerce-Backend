@@ -1,41 +1,35 @@
-import ProductSchema from "../models/productModel.js";
+import Product from "../models/productModel.js";
+import ErrorHandler from "../utils/Errorhandler.js";
 
-// Only for Admin
 export const createProduct = async (req, res, next) => {
   try {
-    const product = await ProductSchema.create(req.body);
+    const product = await Product.create(req.body);
 
     res.status(201).json({
       success: true,
       data: product,
     });
   } catch (error) {
-    res.status(400).json({
-      success: false,
-      message: error.message,
-    });
+    next(error);
   }
 };
 
 export const getAllProducts = async (req, res, next) => {
   try {
-    const products = await ProductSchema.find({});
+    const products = await Product.find({});
 
     res.status(200).json({
       success: true,
       data: products,
     });
   } catch (error) {
-    res.status(400).json({
-      success: false,
-      message: error.message,
-    });
+    next(error);
   }
 };
 
-export const ProductDetails = async (req, res) => {
+export const ProductDetails = async (req, res, next) => {
   try {
-    const product = await ProductSchema.findById(req.params.id);
+    const product = await Product.findById(req.params.id);
 
     if (!product) {
       return next(new ErrorHandler("Product Not Found", 404));
@@ -46,15 +40,9 @@ export const ProductDetails = async (req, res) => {
       data: product,
     });
   } catch (error) {
-    res.status(400).json({
-      success: false,
-      message: error.message,
-    });
+    next(error);
   }
 };
-
-// Admin
-import Product from "../models/productModel.js";
 
 export const UpdateProduct = async (req, res, next) => {
   try {
@@ -74,16 +62,13 @@ export const UpdateProduct = async (req, res, next) => {
       updatedProduct: product,
     });
   } catch (error) {
-    res.status(400).json({
-      success: false,
-      message: error.message,
-    });
+    next(error);
   }
 };
 
 export const DeleteProduct = async (req, res, next) => {
   try {
-    const product = await ProductSchema.findByIdAndDelete(req.params.id);
+    const product = await Product.findByIdAndDelete(req.params.id);
 
     if (!product) {
       return next(new ErrorHandler("Product Not Found", 404));
@@ -94,9 +79,6 @@ export const DeleteProduct = async (req, res, next) => {
       message: "Product Deleted Successfully",
     });
   } catch (error) {
-    res.status(400).json({
-      success: false,
-      message: error.message,
-    });
+    next(error);
   }
 };
