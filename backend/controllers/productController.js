@@ -21,6 +21,13 @@ export const getAllProducts = async (req, res, next) => {
   try {
     const products = await ProductSchema.find({});
 
+    if (!products) {
+        return res.status(404).json({
+          success: false,
+          message: "Product Not Found",
+        });
+      }
+
     res.status(200).json({
       success: true,
       data: products,
