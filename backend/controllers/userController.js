@@ -1,6 +1,7 @@
 import ErrorHandler from "../utils/Errorhandler.js";
 import asyncErrorHandler from "../middlewares/asyncErrorHandler.js";
 import User from "../models/userModel.js";
+import sendToken from "../utils/JWTToken.js";
 
 export const RegisterUser = asyncErrorHandler(async (req, res, next) => {
   const { name, email, password } = req.body;
@@ -14,39 +15,27 @@ export const RegisterUser = asyncErrorHandler(async (req, res, next) => {
     },
   });
 
-  const token = user.getJWTToken();
-
-  res.status(201).json({
-    success: true,
-    jwtToken: token,
-    data: user,
-  });
+  sendToken(user, 201, res);
 });
 
 export const loginUser = asyncErrorHandler(async (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return next(new ErrorHander("Please Enter Email & Password", 400));
+    return next(new ErrorHandler("Please Enter Email & Password", 400));
   }
 
   const user = await User.findOne({ email }).select("+password");
 
   if (!user) {
-    return next(new ErrorHander("Invalid email or password", 401));
+    return next(new ErrorHandler("Invalid email or password", 401));
   }
 
   const isPasswordMatched = await user.comparePassword(password);
 
   if (!isPasswordMatched) {
-    return next(new ErrorHander("Invalid email or password", 401));
+    return next(new ErrorHandler("Invalid email or password", 401));
   }
 
-  const token = user.getJWTToken();
-
-  res.status(201).json({
-    success: true,
-    jwtToken: token,
-    data: user,
-  });
+  sendToken(user, 200, res);
 });
