@@ -22,3 +22,31 @@ export const RegisterUser = asyncErrorHandler(async (req, res, next) => {
     data: user,
   });
 });
+
+export const loginUser = asyncErrorHandler(async (req, res, next) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return next(new ErrorHander("Please Enter Email & Password", 400));
+  }
+
+  const user = await User.findOne({ email }).select("+password");
+
+  if (!user) {
+    return next(new ErrorHander("Invalid email or password", 401));
+  }
+
+  const isPasswordMatched = await user.comparePassword(password);
+
+  if (!isPasswordMatched) {
+    return next(new ErrorHander("Invalid email or password", 401));
+  }
+
+  const token = user.getJWTToken();
+
+  res.status(201).json({
+    success: true,
+    jwtToken: token,
+    data: user,
+  });
+});
