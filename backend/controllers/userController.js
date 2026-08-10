@@ -14,8 +14,11 @@ export const RegisterUser = asyncErrorHandler(async (req, res, next) => {
     },
   });
 
+  const token = user.getJWTToken();
+
   res.status(201).json({
     success: true,
+    jwtToken: token,
     data: user,
   });
 });
