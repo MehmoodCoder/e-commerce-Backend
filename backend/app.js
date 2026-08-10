@@ -4,13 +4,13 @@ const app = express();
 
 import ErrorHanderlerMiddleWare from './middlewares/error.js';
 
-import Product from "./routes/productRoute.js";
-import User from './routes/userRoute.js'
+import ProductRoutes from "./routes/productRoute.js";
+import UserRoutes from './routes/userRoute.js'
 
 app.use(express.json());
 
-app.use("/api/v1", Product);
-app.use("/api/v1", User);
+app.use("/api/v1", ProductRoutes);
+app.use("/api/v1", UserRoutes);
 
 
 // Middleware
