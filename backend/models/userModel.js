@@ -62,9 +62,9 @@ userSchema.methods.getJWTToken = function () {
   });
 };
 
-// userSchema.methods.comparePassword = async function (password) {
-//   return await bcrypt.compare(password, this.password);
-// };
+userSchema.methods.comparePassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
+};
 
 // userSchema.methods.getResetPasswordToken = function () {
 //   const resetToken = crypto.randomBytes(20).toString("hex");
