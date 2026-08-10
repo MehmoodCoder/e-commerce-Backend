@@ -10,12 +10,12 @@ import { isAuthenticatedUser, authorizeRoles } from "../middlewares/auth.js";
 
 const router = express.Router();
 
-router.route("/products").get(isAuthenticatedUser, authorizeRoles("admin"), getAllProducts);
-router.route("/products/create").post(isAuthenticatedUser, createProduct);
+router.route("/products").get(getAllProducts);
+router.route("/products/create").post(isAuthenticatedUser, authorizeRoles("admin"), createProduct);
 router
   .route("/products/:id")
-  .put(isAuthenticatedUser, UpdateProduct)
-  .delete(isAuthenticatedUser, DeleteProduct)
+  .put(isAuthenticatedUser, authorizeRoles("admin"), UpdateProduct)
+  .delete(isAuthenticatedUser, authorizeRoles("admin"), DeleteProduct)
   .get(ProductDetails);
 
 export default router;
