@@ -211,3 +211,20 @@ export const updateUserRole = asyncErrorHandler(async (req, res, next) => {
     success: true,
   });
 });
+
+export const deleteUser = asyncErrorHandler(async (req, res, next) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    return next(
+      new ErrorHandler(`User does not exist with Id: ${req.params.id}`, 400)
+    );
+  }
+
+  await user.remove();
+
+  res.status(200).json({
+    success: true,
+    message: "User Deleted Successfully",
+  });
+});
