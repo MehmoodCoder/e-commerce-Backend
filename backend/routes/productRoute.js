@@ -11,9 +11,9 @@ import { isAuthenticatedUser, authorizeRoles } from "../middlewares/auth.js";
 const router = express.Router();
 
 router.route("/products").get(getAllProducts);
-router.route("/products/create").post(isAuthenticatedUser, authorizeRoles("admin"), createProduct);
+router.route("/admin/products/create").post(isAuthenticatedUser, authorizeRoles("admin"), createProduct);
 router
-  .route("/products/:id")
+  .route("/admin/products/:id")
   .put(isAuthenticatedUser, authorizeRoles("admin"), UpdateProduct)
   .delete(isAuthenticatedUser, authorizeRoles("admin"), DeleteProduct)
   .get(ProductDetails);
