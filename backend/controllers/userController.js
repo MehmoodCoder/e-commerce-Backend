@@ -107,8 +107,8 @@ export const resetPassword = asyncErrorHandler(async (req, res, next) => {
     return next(
       new ErrorHandler(
         "Reset Password Token is invalid or has been expired",
-        400
-      )
+        400,
+      ),
     );
   }
 
@@ -179,13 +179,12 @@ export const getAllUser = asyncErrorHandler(async (req, res, next) => {
   });
 });
 
-
 export const getSingleUser = asyncErrorHandler(async (req, res, next) => {
   const user = await User.findById(req.params.id);
 
   if (!user) {
     return next(
-      new ErrorHandler(`User does not exist with Id: ${req.params.id}`)
+      new ErrorHandler(`User does not exist with Id: ${req.params.id}`),
     );
   }
 
@@ -217,7 +216,7 @@ export const deleteUser = asyncErrorHandler(async (req, res, next) => {
 
   if (!user) {
     return next(
-      new ErrorHandler(`User does not exist with Id: ${req.params.id}`, 400)
+      new ErrorHandler(`User does not exist with Id: ${req.params.id}`, 400),
     );
   }
 
