@@ -124,3 +124,12 @@ export const resetPassword = asyncErrorHandler(async (req, res, next) => {
 
   sendToken(user, 200, res);
 });
+
+export const getUserDetails = asyncErrorHandler(async (req, res, next) => {
+  const user = await User.findById(req.user.id);
+
+  res.status(200).json({
+    success: true,
+    data: user,
+  });
+});
