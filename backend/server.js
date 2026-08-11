@@ -1,10 +1,10 @@
-import app from "./app.js";
-
-import ConnectDB from "./connectDB.js";
-
 import dotenv from "dotenv";
 
 dotenv.config({ path: "backend/config/config.env" });
+
+import app from "./app.js";
+
+import ConnectDB from "./connectDB.js";
 
 // Handling Uncaught Exception
 process.on("uncaughtException", (err) => {
