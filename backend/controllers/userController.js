@@ -2,6 +2,7 @@ import ErrorHandler from "../utils/Errorhandler.js";
 import asyncErrorHandler from "../middlewares/asyncErrorHandler.js";
 import User from "../models/userModel.js";
 import sendToken from "../utils/JWTToken.js";
+import { sendEmail } from "../utils/sendEmail.js";
 
 export const RegisterUser = asyncErrorHandler(async (req, res, next) => {
   const { name, email, password } = req.body;
