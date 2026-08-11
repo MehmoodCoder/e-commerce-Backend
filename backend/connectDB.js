@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 async function ConnectDB(url) {
-  mongoose.connect(url);
+  return await mongoose.connect(url);
 }
 
-export default ConnectDB
+export default ConnectDB;
