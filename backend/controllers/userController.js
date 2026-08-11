@@ -202,7 +202,7 @@ export const updateUserRole = asyncErrorHandler(async (req, res, next) => {
   };
 
   await User.findByIdAndUpdate(req.params.id, newUserData, {
-    new: true,
+    returnDocument: "after",
     runValidators: true,
   });
 
