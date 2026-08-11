@@ -10,6 +10,7 @@ import {
   resetPassword,
   updatePassword,
   updateProfile,
+  updateUserRole,
 } from "../controllers/userController.js";
 
 import { isAuthenticatedUser, authorizeRoles } from "../middlewares/auth.js";
@@ -29,6 +30,7 @@ router
   .get(isAuthenticatedUser, authorizeRoles("admin"), getAllUser);
 router
   .route("/admin/user/:id")
-  .get(isAuthenticatedUser, authorizeRoles("admin"), getSingleUser);
+  .get(isAuthenticatedUser, authorizeRoles("admin"), getSingleUser).put(isAuthenticatedUser, authorizeRoles("admin"), updateUserRole)
+
 
 export default router;
