@@ -15,10 +15,9 @@ process.on("uncaughtException", (err) => {
 
 const PORT = process.env.PORT || 5000;
 
-ConnectDB(process.env.MONGO_URL)
-  .then(() => {
-    console.log("Database Connected Successfully");
-  });
+ConnectDB(process.env.MONGO_URL).then(() => {
+  console.log("Database Connected Successfully");
+});
 
 const server = app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
