@@ -106,13 +106,13 @@ export const resetPassword = asyncErrorHandler(async (req, res, next) => {
     return next(
       new ErrorHandler(
         "Reset Password Token is invalid or has been expired",
-        400,
-      ),
+        400
+      )
     );
   }
 
   if (req.body.password !== req.body.confirmPassword) {
-    return next(new ErrorHandler("Password does not password", 400));
+    return next(new ErrorHandler("Password does not match", 400));
   }
 
   user.password = req.body.password;
