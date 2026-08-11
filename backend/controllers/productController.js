@@ -121,8 +121,6 @@ export const createProductReview = asyncErrorHandler(async (req, res, next) => {
 
 export const getProductReviews = asyncErrorHandler(async (req, res, next) => {
   const product = await Product.findById(req.query.id);
-  console.log(product);
-  
 
   if (!product) {
     return next(new ErrorHandler("Product not found", 404));
@@ -142,7 +140,7 @@ export const deleteReview = asyncErrorHandler(async (req, res, next) => {
   }
 
   const reviews = product.reviews.filter(
-    (rev) => rev._id.toString() !== req.query.id.toString()
+    (rev) => rev._id.toString() !== String(req.query.id)
   );
 
   let avg = 0;
@@ -169,8 +167,8 @@ export const deleteReview = asyncErrorHandler(async (req, res, next) => {
       numOfReviews,
     },
     {
-      new: true,
       runValidators: true,
+      returnDocument: 'after'
     }
   );
 
