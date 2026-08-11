@@ -195,3 +195,19 @@ export const getSingleUser = asyncErrorHandler(async (req, res, next) => {
   });
 });
 
+export const updateUserRole = asyncErrorHandler(async (req, res, next) => {
+  const newUserData = {
+    name: req.body.name,
+    email: req.body.email,
+    role: req.body.role,
+  };
+
+  await User.findByIdAndUpdate(req.params.id, newUserData, {
+    new: true,
+    runValidators: true,
+  });
+
+  res.status(200).json({
+    success: true,
+  });
+});
