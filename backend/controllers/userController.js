@@ -91,7 +91,6 @@ export const forgotPassword = asyncErrorHandler(async (req, res, next) => {
   }
 });
 
-
 export const resetPassword = asyncErrorHandler(async (req, res, next) => {
   const resetPasswordToken = crypto
     .createHash("sha256")
@@ -107,8 +106,8 @@ export const resetPassword = asyncErrorHandler(async (req, res, next) => {
     return next(
       new ErrorHandler(
         "Reset Password Token is invalid or has been expired",
-        400
-      )
+        400,
+      ),
     );
   }
 
@@ -124,4 +123,3 @@ export const resetPassword = asyncErrorHandler(async (req, res, next) => {
 
   sendToken(user, 200, res);
 });
-
