@@ -274,3 +274,12 @@ npm i body-parser
 - [W3Schools Web Tutorials](https://www.w3schools.com) — *(Comprehensive tutorials for JavaScript, Node.js, Express, and databases)*
 
 ---
+
+## 👤 Author
+
+**MehmoodCoder**
+
+- 🔗 GitHub: [https://github.com/MehmoodCoder](https://github.com/MehmoodCoder)
+- 🌐 Portfolio: [My Portfolio Link](https://mh56-portfolio.vercel.app)
+
+---
