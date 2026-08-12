@@ -301,3 +301,16 @@ Contributions are welcome! If you'd like to improve the API, add new features, o
 5. Open a Pull Request
 
 ---
+
+## 📝 Changelog
+
+### v1.0.0 (Initial Release)
+- ✨ **Modular REST API Architecture:** Initialized core Node.js & Express.js backend services structured around the MVC pattern.
+- 🔐 **Authentication & Authorization:** Implemented JWT-based security, password hashing with `bcryptjs`, and role-based access control middleware.
+- ⚙️ **Advanced CRUD Systems & Array Operations:** Engineered complete backend routes for product management, user profiles, and sub-document review handling (`$pull` filters).
+- ⚡ **Global Error Handling:** Integrated custom async error handler and global error middleware for robust exception management.
+- 🗄️ **Database Persistence:** Configured Mongoose schema designs with strict validation rules and cloud MongoDB Atlas connectivity.
+- 🚀 **Production-Ready Baseline:** Configured environment isolation via `dotenv`, cookie-parser session management, and serverless deployment protocols.
+
+---
+
