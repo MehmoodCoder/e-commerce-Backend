@@ -35,3 +35,22 @@ This workspace contains a production-ready, full-stack E-Commerce REST API backe
 - ⚙️ **Centralized Environment Configuration** – Secure management of sensitive backend credentials, database URIs, and server ports using `dotenv`.
 
 ---
+
+## 🛠️ Tech Stack & Dependencies
+
+| Tool / Library | Type | Purpose |
+| :--- | :--- | :--- |
+| **Node.js** | Runtime | Server-side JavaScript execution environment |
+| **Express.js** | Backend Framework | Web framework for handling RESTful API routes & HTTP requests |
+| **Mongoose** | Backend ODM | Schema-based data modeling and async queries for MongoDB |
+| **Nodemon** | Dev Dependency | Automatically restarts Node app when server-side file changes occur |
+| **dotenv** | Utility | Loads environment variables from `.env` file into `process.env` |
+| **jsonwebtoken (JWT)** | Dependency | Authentication mechanism using secure JSON Web Tokens |
+| **bcryptjs** | Dependency | Password hashing library for secure credential storage |
+| **nodemailer** | Dependency | Email sending service for user notifications / password resets |
+| **validator** | Dependency | String validation and sanitization (e.g., checking valid email formats) |
+| **cookie-parser** | Dependency | Middleware to parse HTTP request cookies for auth session handling |
+| **body-parser** | Dependency | Middleware to parse incoming request bodies before handlers |
+| **Postman** | API Client | Manual testing tool for REST endpoints (`GET`, `POST`, `PUT`, `DELETE`) |
+
+---
