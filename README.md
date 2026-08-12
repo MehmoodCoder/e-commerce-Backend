@@ -14,3 +14,14 @@
 
 ---
 
+## 💡 What's Inside This Repository?
+
+This workspace contains a production-ready, full-stack E-Commerce REST API backend featuring modular architecture and robust data handling:
+- 🛒 **E-Commerce REST API:** Complete backend infrastructure for products, orders, user authentication, and system administration.
+- ⚙️ **Advanced CRUD & Sub-Document Operations:** Complete lifecycle management for products and reviews, including nested array updates via `$pull` and automatic rating recalculations.
+- 🛡️ **Role-Based Access Control:** Secure user management and admin privilege routing for user roles and product modifications.
+- ⚡ **Centralized Error Handling:** Global error catching for async controllers, uncaught exceptions, unhandled promise rejections, and custom error middleware.
+
+---
+
+
