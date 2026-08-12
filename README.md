@@ -250,3 +250,13 @@ npm i body-parser
 **Note:**  Install packages when needed
 
 ---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** (v16 or higher)
+- **npm** package manager
+- Basic knowledge of React and JavaScript
+
+---
