@@ -2,6 +2,8 @@
 
 ⚡ Dynamic Node.js E-Commerce REST API Engine 🚀 | Express.js ⚡, MongoDB Atlas 🗄️, Mongoose 🍃 &amp; JWT Auth 🔐 | Scalable MVC Architecture 🏛️ | Secured Auth Middleware 🛡️, Product &amp; Order CRUD 🛍️📦, Cart Engine 🛒💳 &amp; `.env` Protection 🗝️ | High-Performance Scalability 📈💥
 
+⚡ Dynamic Node.js E-Commerce REST API Engine 🚀 | Express.js ⚡, MongoDB Atlas 🗄️, Mongoose 🍃 & JWT Auth 🔐 | Scalable MVC Architecture 🏛️ | Secured Auth Middleware 🛡️, Product, User & Review CRUD 🛍️👤⭐ & `.env` Protection 🗝️ | High-Performance Scalability 📈💥
+
 ---
 
 ## 🛠️ Key Technologies & Core Concepts
