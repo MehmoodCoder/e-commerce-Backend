@@ -5,8 +5,7 @@ import ApiFeatures from "../utils/ApiFeatures.js";
 import asyncErrorHandler from "../middlewares/asyncErrorHandler.js";
 
 export const createProduct = catchAsyncErrors(async (req, res, next) => {
-
-  req.body.user = req.user.id
+  req.body.user = req.user.id;
 
   const product = await Product.create(req.body);
 
@@ -95,7 +94,7 @@ export const createProductReview = asyncErrorHandler(async (req, res, next) => {
   }
 
   const isReviewed = product.reviews.find(
-    (rev) => rev.user.toString() === req.user._id.toString()
+    (rev) => rev.user.toString() === req.user._id.toString(),
   );
 
   if (isReviewed) {
@@ -147,7 +146,7 @@ export const deleteReview = asyncErrorHandler(async (req, res, next) => {
   }
 
   const reviews = product.reviews.filter(
-    (rev) => rev._id.toString() !== req.query.id
+    (rev) => rev._id.toString() !== req.query.id,
   );
 
   let avg = 0;
