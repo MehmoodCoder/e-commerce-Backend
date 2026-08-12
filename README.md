@@ -283,3 +283,10 @@ npm i body-parser
 - 🌐 Portfolio: [My Portfolio Link](https://mh56-portfolio.vercel.app)
 
 ---
+
+## 📄 License
+
+This project is open-source and available under the **MIT License**.
+
+---
+
