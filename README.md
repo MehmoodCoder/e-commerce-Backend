@@ -314,3 +314,4 @@ Contributions are welcome! If you'd like to improve the API, add new features, o
 
 ---
 
+### ***Happy coding without chai ! ☕***
