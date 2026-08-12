@@ -95,6 +95,17 @@ This workspace contains a production-ready, full-stack E-Commerce REST API backe
 
 ---
 
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** (v16 or higher)
+- **npm** package manager
+- Basic knowledge of JavaScript
+- Basic knowledge of MongoDB
+
+---
+
 # 📦 MERN Stack: Backend Architecture Setup Guide
 
 ## 1. Installing Node.js & NPM
@@ -251,13 +262,37 @@ npm i body-parser
 
 ---
 
-## 🚀 Getting Started
+## 🚀 E-Commerce REST API - Routing & Setup Guide
 
-### Prerequisites
+A production-ready Node.js & Express RESTful API architecture following the **MVC (Model-View-Controller)** pattern with **JWT Authentication**, **Role-Based Access Control (RBAC)**, and **Mongoose sub-document query handling**.
 
-- **Node.js** (v16 or higher)
-- **npm** package manager
-- Basic knowledge of React and JavaScript
+---
+
+### Installation Steps
+```bash
+# Clone the repository
+git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
+
+# Navigate to backend directory
+cd backend
+
+# Install dependencies
+npm install
+
+# Configure Environment Variables (.env)
+# Create a .env file in the config/ directory with:
+PORT=5000
+DB_URI=mongodb://localhost:27017/ecommerce
+JWT_SECRET=YOUR_JWT_SECRET_KEY
+JWT_EXPIRE=nd
+COOKIE_EXPIRE=n
+SMPT_HOST=host
+SMPT_PORT=port
+SMPT_SERVICE=service
+SMPT_MAIL=your_email@gmail.com
+SMPT_PASSWORD=your_app_password
+
+```
 
 ---
 
