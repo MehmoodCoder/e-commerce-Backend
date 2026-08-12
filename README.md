@@ -24,4 +24,14 @@ This workspace contains a production-ready, full-stack E-Commerce REST API backe
 
 ---
 
+## ✨ Features
 
+- 🏗️ **Modular REST API Architecture** – Scalable Node.js & Express.js backend engineered with RESTful principles and clean route-controller separation.
+- 🏛️ **MVC Design Pattern** – Strict separation of concerns organizing data structure in Models, endpoints in Routes, and core application logic in Controllers.
+- ⚙️ **Advanced Database CRUD & Array Operations** – Complete lifecycle management for products, users, and reviews, utilizing Mongoose sub-document filtering (`$pull`) and dynamic rating recalculations.
+- 🛡️ **Role-Based Access Control (RBAC)** – Multi-role authorization layers restricting sensitive administrative endpoints and user operations.
+- 🗄️ **MongoDB & Mongoose Schema Validation** – Persistent document storage featuring custom field validations, schema constraints, and modern Mongoose query standards (`returnDocument`).
+- ⚡ **Centralized Global Error Handling** – Production-grade error middleware handling asynchronous route errors (`asyncErrorHandler`), missing resource exceptions, unhandled promise rejections, and uncaught exceptions.
+- ⚙️ **Centralized Environment Configuration** – Secure management of sensitive backend credentials, database URIs, and server ports using `dotenv`.
+
+---
