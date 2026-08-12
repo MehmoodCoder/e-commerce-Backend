@@ -296,6 +296,46 @@ SMPT_PASSWORD=your_app_password
 
 ---
 
+## 🌐 API Route Specifications
+
+Base Route: `protocol://host:port/api/v1`
+
+---
+
+### 1. User & Authentication Routes (`/api/v1`)
+
+| Method | Endpoint | Access Level | Description |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/register` | Public | Register a new user and generate JWT token in HTTP-only cookie |
+| `POST` | `/login` | Public | Authenticate existing user credentials |
+| `GET` | `/logout` | Public | Clear session cookie and end user session |
+| `POST` | `/password/forgot` | Public | Generate password reset token & email recovery link |
+| `PUT` | `/password/reset/:token` | Public | Update user password using validated reset token |
+| `GET` | `/me` | Authenticated | Fetch current logged-in user profile details |
+| `PUT` | `/password/update` | Authenticated | Update account password using current password validation |
+| `PUT` | `/me/update` | Authenticated | Update basic profile information (Name, Email) |
+| `GET` | `/admin/users` | Admin Only | Fetch list of all registered users in database |
+| `GET` | `/admin/user/:id` | Admin Only | Get single user detail by MongoDB ObjectId |
+| `PUT` | `/admin/user/:id` | Admin Only | Update user role (admin / user) and details |
+| `DELETE` | `/admin/user/:id` | Admin Only | Permanently delete user account from database |
+
+---
+
+### 2. Product & Review Routes (`/api/v1`)
+
+| Method | Endpoint | Access Level | Description |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/products` | Public | Fetch products with Search, Filter, and Pagination features |
+| `GET` | `/products/:id` | Public | Get single product detail by ObjectId |
+| `POST` | `/admin/products/create` | Admin Only | Create new product catalog item |
+| `PUT` | `/admin/products/:id` | Admin Only | Update product details |
+| `DELETE` | `/admin/products/:id` | Admin Only | Delete product record from database |
+| `PUT` | `/review` | Authenticated | Create or update user review & recalculate average ratings |
+| `GET` | `/reviews?id=PRODUCT_ID` | Public | Fetch all reviews belonging to a specific product |
+| `DELETE` | `/reviews?productId=P_ID&id=R_ID` | Authenticated | Delete a sub-document review & recalculate overall rating |
+
+---
+
 ## 📚 Learning Resources
 
 - [Express.js Documentation](https://expressjs.com) — *(Official guide for routing, controllers, and Express middleware)*
