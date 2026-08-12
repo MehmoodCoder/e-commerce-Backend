@@ -95,3 +95,158 @@ This workspace contains a production-ready, full-stack E-Commerce REST API backe
 
 ---
 
+# 📦 MERN Stack: Backend Architecture Setup Guide
+
+## 1. Installing Node.js & NPM
+Download and install the LTS version from [Node.js Official Site](https://nodejs.org/).
+Verify installation in your terminal:
+```bash
+node -v
+npm -v
+```
+
+## 2. Installing MongoDB Community Server & Mongosh
+1. Download **MongoDB Community Server** from [MongoDB Download Center](https://www.mongodb.com/try/download/community).
+2. Download **MongoDB Shell (`mongosh`)** to run CLI database operations.
+3. Start the local server daemon:
+```bash
+# Verify connection using mongosh CLI
+mongosh
+```
+
+## 3. Setting Up `package.json` with ES Modules
+Initialize your Node project inside any project directory:
+```bash
+npm init
+```
+
+### During the prompt configuration, fill out the selections like this:
+
+package name: (name)
+
+version: (1.0.0) 
+
+description: may add
+​
+entry point: (app.js)​
+
+test command: just enter​
+
+git repository: (https://github.com/username/repo_name.git)
+
+keywords: may add
+
+author: may add
+
+license: (ISC) may be MIT for open source
+
+type: (commonjs) recommended module
+
+Is this OK? (yes) 
+
+---
+
+### 💻 How to Run the backend of the MERN Project Locally  
+
+If you want to pull this project and run it again locally, simply execute these commands:
+
+```bash
+# Navigate to the project folder
+cd Project_dir
+
+# create node_modules folder by running this command  
+npm i
+
+# Start the local development server
+npm start  # for deployment 
+npm run dev # for development
+```
+
+---
+
+To enable modern ES6 `import/export` syntax instead of `require()`, open `package.json` and add `"type": "module"`:
+```json
+{
+  "name": "node",
+  "version": "1.0.0",
+  "bugs": {
+    "url": "https://github.com/username/repo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username/repo.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js" // add manually write "nodemon index.js" if installed
+  }
+}
+
+```
+
+---
+
+## 4. Installing Core Dependencies for MERN Stack Backend
+Run this command inside your project directory to install npm pakages in pakages.json file:
+```bash
+npm i express
+npm i mongoose
+npm i nodemon
+npm i dotenv
+npm i jsonwebtoken
+npm i nodemailer
+npm i bcryptjs
+npm i validator
+npm i cookie-parser
+npm i body-parser
+```
+
+**It automatically Create package.json if not exists. Like**
+
+```json
+{
+  "name": "pakage name",
+  "version": "1.0.0",
+  "description": "Something",
+  "keywords": [
+    "keywords"
+  ],
+  "homepage": "https://github.com/github.com/username#readme",
+  "bugs": {
+    "url": "https://github.com/github.com/username/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github.com/username.git"
+  },
+  "author": "Author",
+  "type": "module",
+   "main": "backend/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "body-parser": "^2.3.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.9.1",
+    "nodemailer": "^9.0.5",
+    "nodemon": "^3.1.14",
+    "validator": "^13.15.35"
+  }
+}
+
+```
+
+**Note:**  Install packages when needed
+
+---
