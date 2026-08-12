@@ -275,6 +275,22 @@ npm i body-parser
 
 ---
 
+## 💡 Core Concepts Covered
+
+- ✅ **MVC Architecture** – Structuring backend applications using Models, Express Routes, and Controller business logic
+- ✅ **Authentication & JWT** – Issuing, signing, and verifying JSON Web Tokens (JWT) for secure user sessions
+- ✅ **Password Security & Hashing** – Hashing user credentials securely using `bcryptjs` before database persistence
+- ✅ **Cookie Management** – Storing and parsing HTTP-only cookies safely with `cookie-parser` for authentication state
+- ✅ **Role-Based Access Control (RBAC)** – Dynamic route protection and administrative privilege checks based on user roles
+- ✅ **MongoDB & Mongoose Schema Design** – Managing schemas, data validation, sub-documents (reviews), and modern Mongoose query standards
+- ✅ **Sub-Document & Array Operations** – Atomic array updates (`$pull`) and dynamic calculation of ratings and review counts
+- ✅ **Express Middleware Pipeline** – Request body parsing (`json`, `urlencoded`), error handling middleware, and protected route guards
+- ✅ **Asynchronous Error Handling** – Managing async exceptions cleanly with custom error handlers (`asyncErrorHandler`) and custom error classes
+- ✅ **Notification Services** – Integrated email workflows using `Nodemailer` for user notifications and password resets
+- ✅ **Environment Vault & Tooling** – Managing secret variables via `dotenv` and developer workflows with `nodemon`
+
+---
+
 ## 👤 Author
 
 **MehmoodCoder**
