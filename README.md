@@ -260,3 +260,17 @@ npm i body-parser
 - Basic knowledge of React and JavaScript
 
 ---
+
+## 📚 Learning Resources
+
+- [Express.js Documentation](https://expressjs.com) — *(Official guide for routing, controllers, and Express middleware)*
+- [Mongoose Documentation](https://mongoosejs.com/docs/) — *(Guides for MongoDB schema modeling, queries, and aggregation)*
+- [JSON Web Token (JWT) Guide](https://jwt.io/introduction) — *(Official docs for token-based authentication and security)*
+- [Bcryptjs Repository](https://github.com/dcodeIO/bcrypt.js) — *(Documentation for hashing passwords securely in Node.js)*
+- [Nodemailer Documentation](https://nodemailer.com) — *(Official setup guide for sending emails and password resets)*
+- [Cookie-Parser Repository](https://github.com/expressjs/cookie-parser) — *(Guide for parsing HTTP request cookies in Express)*
+- [Validator.js Documentation](https://github.com/validatorjs/validator.js) — *(Reference for string sanitization and custom schema validation)*
+- [Postman Learning Center](https://learning.postman.com/docs/getting-started/overview/) — *(API testing, collection management, and request debugging)*
+- [W3Schools Web Tutorials](https://www.w3schools.com) — *(Comprehensive tutorials for JavaScript, Node.js, Express, and databases)*
+
+---
