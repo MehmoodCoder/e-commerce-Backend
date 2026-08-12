@@ -54,3 +54,44 @@ This workspace contains a production-ready, full-stack E-Commerce REST API backe
 | **Postman** | API Client | Manual testing tool for REST endpoints (`GET`, `POST`, `PUT`, `DELETE`) |
 
 ---
+
+## 📂 Project Directory Structure
+
+**Generated:** 8/12/2026, 10:41:29 AM
+
+**Root Path:** `workspace\e-commerce-Backend`
+
+```
+├── 📁 backend
+│   ├── 📁 config
+│   ├── 📁 controllers
+│   │   ├── 📄 productController.js
+│   │   └── 📄 userController.js
+│   ├── 📁 middlewares
+│   │   ├── 📄 asyncErrorHandler.js
+│   │   ├── 📄 auth.js
+│   │   └── 📄 error.js
+│   ├── 📁 models
+│   │   ├── 📄 productModel.js
+│   │   └── 📄 userModel.js
+│   ├── 📁 routes
+│   │   ├── 📄 productRoute.js
+│   │   └── 📄 userRoute.js
+│   ├── 📁 utils
+│   │   ├── 📄 ApiFeatures.js
+│   │   ├── 📄 Errorhandler.js
+│   │   ├── 📄 JWTToken.js
+│   │   └── 📄 sendEmail.js
+│   ├── 📄 app.js
+│   ├── 📄 connectDB.js
+│   └── 📄 server.js
+├── 📁 frontend
+│   └── ⚙️ .gitkeep
+├── ⚙️ .gitignore
+├── 📝 README.md
+├── ⚙️ package-lock.json
+└── ⚙️ package.json
+```
+
+---
+
