@@ -339,8 +339,6 @@ Base Route: `protocol://host:port/api/v1`
 ## ⚠️ Troubleshooting Common Pitfalls
 
 - **Review Sub-Document Deletion (`_id` Mismatch):** When deleting a review via `DELETE /api/v1/reviews?productId=P_ID&id=R_ID`, ensure the `id` query parameter corresponds to the **Review Sub-Document `_id`**, not the User `_id`. Passing the User ID will cause Mongoose filter operations to skip without mutating the database array.
-- **Mongoose Array Change Detection:** When modifying arrays directly (e.g., `product.reviews = filteredReviews`), call `product.markModified('reviews')` or execute an explicit `Product.findByIdAndUpdate(...)` call to force Mongoose to write sub-document updates to MongoDB.
-- **Numeric Type Coercion for Ratings:** Ensure rating fields from `req.body` are explicitly parsed using `Number(rating)`. Failure to cast input strings leads to string concatenation (`"4" + "1" = "41"`) during average rating calculation loops.
 
 ---
 
