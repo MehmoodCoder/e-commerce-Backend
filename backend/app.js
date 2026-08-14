@@ -14,8 +14,6 @@ app.use(cookieParser());
 app.use("/api/v1", ProductRoutes);
 app.use("/api/v1", UserRoutes);
 
-// Middleware
-
 app.use(ErrorHanderlerMiddleWare);
 
 export default app;
