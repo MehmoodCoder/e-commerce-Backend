@@ -101,8 +101,7 @@ This workspace contains a production-ready, full-stack E-Commerce REST API backe
 
 - **Node.js** (v16 or higher)
 - **npm** package manager
-- Basic knowledge of JavaScript
-- Basic knowledge of MongoDB
+- Basic knowledge of JavaScript & MongoDB
 
 ---
 
