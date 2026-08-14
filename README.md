@@ -7,7 +7,7 @@
 ## 🛠️ Key Technologies & Core Concepts
 
 - **Backend Architecture:** Modular RESTful APIs engineered with **Node.js** & **Express.js**, structured using Express Routers, custom middleware error handlers (`asyncErrorHandler`), and controller-based business logic.
-- **Database Persistence & Data Modeling:** Scalable document modeling via **MongoDB** & **Mongoose**, featuring schema validations, sub-documents (reviews & user roles), and optimized queries (`findByIdAndUpdate`, `$pull` array updates, `returnDocument` standards).
+- **Database Persistence & Data Modeling:** Scalable document modeling via **MongoDB** & **Mongoose**, featuring schema validations, sub-documents (reviews & user roles), and optimized queries (`findByIdAndUpdate` array updates, `returnDocument` standards).
 - **Security & Error Handling:** Robust exception management using global handlers for uncaught exceptions, unhandled promise rejections, and custom error middleware.
 - **Environment & Configuration Setup:** Centralized setup using **`dotenv`** for secret and environment management, proper load ordering, and clean project architecture.
 - **Software Architecture:** Strictly structured following the **MVC (Model-View-Controller)** pattern—separating Mongoose Data Models, Express Route Handlers, and Controller Business Logic for high maintainability and scalability.
@@ -28,7 +28,7 @@ This workspace contains a production-ready, full-stack E-Commerce REST API backe
 
 - 🏗️ **Modular REST API Architecture** – Scalable Node.js & Express.js backend engineered with RESTful principles and clean route-controller separation.
 - 🏛️ **MVC Design Pattern** – Strict separation of concerns organizing data structure in Models, endpoints in Routes, and core application logic in Controllers.
-- ⚙️ **Advanced Database CRUD & Array Operations** – Complete lifecycle management for products, users, and reviews, utilizing Mongoose sub-document filtering (`$pull`) and dynamic rating recalculations.
+- ⚙️ **Advanced Database CRUD & Array Operations** – Complete lifecycle management for products, users, and reviews, utilizing Mongoose sub-document filtering and dynamic rating recalculations.
 - 🛡️ **Role-Based Access Control (RBAC)** – Multi-role authorization layers restricting sensitive administrative endpoints and user operations.
 - 🗄️ **MongoDB & Mongoose Schema Validation** – Persistent document storage featuring custom field validations, schema constraints, and modern Mongoose query standards (`returnDocument`).
 - ⚡ **Centralized Global Error Handling** – Production-grade error middleware handling asynchronous route errors (`asyncErrorHandler`), missing resource exceptions, unhandled promise rejections, and uncaught exceptions.
@@ -404,7 +404,7 @@ Contributions are welcome! If you'd like to improve the API, add new features, o
 ### v1.0.0 (Initial Release)
 - ✨ **Modular REST API Architecture:** Initialized core Node.js & Express.js backend services structured around the MVC pattern.
 - 🔐 **Authentication & Authorization:** Implemented JWT-based security, password hashing with `bcryptjs`, and role-based access control middleware.
-- ⚙️ **Advanced CRUD Systems & Array Operations:** Engineered complete backend routes for product management, user profiles, and sub-document review handling (`$pull` filters).
+- ⚙️ **Advanced CRUD Systems & Array Operations:** Engineered complete backend routes for product management, user profiles, and sub-document review handling (filters).
 - ⚡ **Global Error Handling:** Integrated custom async error handler and global error middleware for robust exception management.
 - 🗄️ **Database Persistence:** Configured Mongoose schema designs with strict validation rules and cloud MongoDB Atlas connectivity.
 - 🚀 **Production-Ready Baseline:** Configured environment isolation via `dotenv`, cookie-parser session management, and serverless deployment protocols.
